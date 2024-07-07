@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch8f3hkr65u15"]
+
+[ext_resource type="Texture2D" uid="uid://wnbv4ammjunp" path="res://Assets/wood_baseColor.png" id="1_uf2d2"]
+[ext_resource type="Texture2D" uid="uid://gxgpj57ttx7i" path="res://Assets/wood_ambientOcclusion.png" id="2_aoscm"]
+[ext_resource type="Texture2D" uid="uid://utng5o8gn2n2" path="res://Assets/wood_height.png" id="3_7sh5w"]
+[ext_resource type="Texture2D" uid="uid://gxyp6l1npufg" path="res://Assets/wood_normal.png" id="4_luwjr"]
+[ext_resource type="Texture2D" uid="uid://bjk46o4105kk2" path="res://Assets/wood_roughness.png" id="5_xdylq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7wi68"]
+size = Vector3(35, 2, 70)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jnom"]
+albedo_color = Color(1, 0.815686, 0.501961, 1)
+albedo_texture = ExtResource("1_uf2d2")
+roughness_texture = ExtResource("5_xdylq")
+normal_enabled = true
+normal_texture = ExtResource("4_luwjr")
+ao_enabled = true
+ao_texture = ExtResource("2_aoscm")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_7sh5w")
+uv1_scale = Vector3(20, 10, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_knsbw"]
+material = SubResource("StandardMaterial3D_4jnom")
+size = Vector3(20, 1, 40)
+
+[node name="Floor" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.570724, 0, 0, 0, 0.570724, 0, 0, 0, 0.570724, 0, 0, 0)
+shape = SubResource("BoxShape3D_7wi68")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_knsbw")

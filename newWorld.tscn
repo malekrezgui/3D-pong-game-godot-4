@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkx10fewqqt63"]
+
+[ext_resource type="PackedScene" uid="uid://bes5dibttjk34" path="res://wall.tscn" id="1_41v1e"]
+[ext_resource type="Script" path="res://newWorld.gd" id="1_acf5u"]
+[ext_resource type="PackedScene" uid="uid://ch8f3hkr65u15" path="res://floor.tscn" id="2_td6ul"]
+[ext_resource type="PackedScene" uid="uid://d3pxcchl6vqbp" path="res://NewPlayer.tscn" id="3_2hats"]
+[ext_resource type="PackedScene" uid="uid://dn00gf80yy7oi" path="res://NewBall.tscn" id="4_2mtt8"]
+[ext_resource type="PackedScene" uid="uid://ccjlfku4vltq0" path="res://camera_3d.tscn" id="5_t6cr5"]
+
+[node name="NewWorld" type="Node3D"]
+script = ExtResource("1_acf5u")
+
+[node name="Boundaries" type="Node3D" parent="."]
+
+[node name="wall1" parent="Boundaries" instance=ExtResource("1_41v1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4755, 0.447187, 0.0128593)
+
+[node name="wall2" parent="Boundaries" instance=ExtResource("1_41v1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.431, 0.435998, 0.0112782)
+
+[node name="Floor" parent="Boundaries" instance=ExtResource("2_td6ul")]
+
+[node name="Player1" parent="." instance=ExtResource("3_2hats")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147949, 1.02711, 19.0122)
+
+[node name="Player2" parent="." instance=ExtResource("3_2hats")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0357158, 1.0035, -18.4075)
+
+[node name="Ball" parent="." instance=ExtResource("4_2mtt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0435672, 0.806046, -0.0616863)
+
+[node name="Camera3D" parent="." instance=ExtResource("5_t6cr5")]

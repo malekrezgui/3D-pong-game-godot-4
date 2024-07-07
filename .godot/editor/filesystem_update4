@@ -1,0 +1,12 @@
+res://default_env.tres
+res://Lobby/Lobby.tscn
+res://world/world.tscn
+res://NewPlayer.tscn
+res://NewBall.tscn
+res://floor.tscn
+res://wall.tscn
+res://newWorld.tscn
+res://camera_3d.tscn
+res://system/common/network/client_network.gd
+res://newWorld.gd
+res://NewPlayer.gd
